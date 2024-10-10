@@ -1,8 +1,10 @@
 const myButton = document.getElementById("btn");
 const myParagraph = document.getElementById("my-paragraph");
 
-btn.addEventListener("click", clickFunction);
+let clickCounter = 0;
 
 function clickFunction() {
-    document.getElementById("my-paragraph").innerHTML = "Suffering!!!";
+    clickCounter = clickCounter + 1;
+    document.getElementById("my-paragraph").innerHTML = "Suffering!!!" + clickCounter + "times";
 }
+btn.addEventListener("click", clickFunction);
