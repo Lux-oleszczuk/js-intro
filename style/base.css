@@ -19,3 +19,11 @@ a {
   user-select: none;
   cursor: pointer;
 }
+#btn {
+  padding: 5px;
+  margin: 3px;
+  background-color: rgb(168, 14, 130);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
