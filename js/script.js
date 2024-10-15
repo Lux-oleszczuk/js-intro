@@ -9,6 +9,9 @@ const characterName = ["terryfied kitten", "Cyriak's puppies", "Weird kitty"]
 const myButton = document.getElementById("btn");
 const myParagraph = document.getElementById("my-paragraph");
 const characterImage = document.getElementById("character-img")
+//imput and submit button
+const myButton2 = document.getElementById("btn2");
+const imput1 = document.getElementById("imput")
 
 let characterCounter = 1;
 
@@ -28,7 +31,6 @@ function clickFunction() {
 //update paragraph text with a new counter
 myParagraph.innerHTML = "I am a character" + characterCounter;
 
-
     if(characterCounter === 1) {
         characterImage.src = imageSources[0];
         characterImage.alt = altText[0];
@@ -47,6 +49,13 @@ myParagraph.innerHTML = "I am a character" + characterCounter;
         myParagraph.innerHTML = characterName[2];
         return;
     }
-
 }
+//image change button execution
 btn.addEventListener("click", clickFunction);
+//update character name to what is stored in the imput function.
+function clickFunction2(){
+    myParagraph.innerHTML = imput1.value;
+}
+//inpit and submit button click effect execution
+myButton2.onclick = clickFunction2;
+imput1.onclick = myButton2;

@@ -25,3 +25,9 @@
 .flex-column {
   flex-direction: column;
 }
+#character-img{
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+}

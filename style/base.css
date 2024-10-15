@@ -7,9 +7,12 @@
 
 body {
   height: 100vh;
+  background-color: rgb(213, 213, 213);
 }
 p{
-  color: black;
+  color: rgb(81, 15, 15);
+  font-size: 2rem;
+  font-weight: bold;
 }
 a {
   all: unset;
@@ -21,11 +24,16 @@ a {
   user-select: none;
   cursor: pointer;
 }
-#btn {
+#btn, #btn2 {
   padding: 5px;
   margin: 3px;
-  background-color: rgb(168, 14, 130);
-  color: white;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+}
+#btn{
+  background-color: rgb(168, 14, 130);
+}
+#btn2 {
+  background-color: rgb(14, 168, 22);
 }
