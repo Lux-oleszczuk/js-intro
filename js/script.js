@@ -1,9 +1,9 @@
 //defne cources for each image in an array
 const imageSources = ["assets/kitty.jpg", "assets/puppies.jpg","assets/weirdkitty.jpg" ];
 //define alternative text
-const altText = ["A terryfied white kitten","Cyriak's Yorkshire puppies that have furry snake tails instead of a common puppies' body", "a kitty with a big human eyes instead of kotten's eyes" ]
+const altText = ["A terrified white kitten","Cyriak's Yorkshire puppies that have furry snake tails instead of a common puppies' body", "a kitty with a big human eyes instead of kotten's eyes" ];
 //characters' names
-const characterName = ["terryfied kitten", "Cyriak's puppies", "Weird kitty"]
+const characterName = ["terrified kitten", "Cyriak's puppies", "Weird kitty"];
 
 //store which character is currently being displayed
 const myButton = document.getElementById("btn");
