@@ -1,22 +1,16 @@
-//defne cources for each image
-const imageOne = "assets/kitty.jpg";
-const imageTwo = "assets/puppies.jpg";
-const imageThree = "assets/weirdkitty.jpg";
+//defne cources for each image in an array
+const imageSources = ["assets/kitty.jpg", "assets/puppies.jpg","assets/weirdkitty.jpg" ];
+//define alternative text
+const altText = ["A terryfied white kitten","Cyriak's Yorkshire puppies that have furry snake tails instead of a common puppies' body", "a kitty with a big human eyes instead of kotten's eyes" ]
+//characters' names
+const characterName = ["terryfied kitten", "Cyriak's puppies", "Weird kitty"]
 
 //store which character is currently being displayed
 const myButton = document.getElementById("btn");
 const myParagraph = document.getElementById("my-paragraph");
 const characterImage = document.getElementById("character-img")
 
-//define alternative text
-const altText1 = "A weird kitty"
-const altText2 = "Cyriak's Yorkshire puppies that have furry snake tails instead of a common puppies' body"
-const altText3 = "a kitty with a big human eyes instead of kotten's eyes"
-
 let characterCounter = 1;
-
-// const images = ["assets/kitty.jpg", "assets/puppies.jpg","assets/weirdkitty.jpg" ]
-
 
 /**
  * Update character counter and display next one
@@ -36,18 +30,21 @@ myParagraph.innerHTML = "I am a character" + characterCounter;
 
 
     if(characterCounter === 1) {
-        characterImage.src = imageOne;
-        characterImage.src = altText1;
+        characterImage.src = imageSources[0];
+        characterImage.alt = altText[0];
+        myParagraph.innerHTML = characterName[0];
         return;
     }
     if(characterCounter === 2) {
-        characterImage.src = imageTwo;
-        characterImage.src = altText2;
+        characterImage.src = imageSources[1];
+        characterImage.alt = altText[1];
+        myParagraph.innerHTML = characterName[1];
         return;
     }
     if(characterCounter === 3) {
-        characterImage.src = imageThree;
-        characterImage.src = altText3;
+        characterImage.src = imageSources[2];
+        characterImage.alt = altText[2];
+        myParagraph.innerHTML = characterName[2];
         return;
     }
 
