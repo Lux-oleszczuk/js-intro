@@ -65,25 +65,46 @@ imput1.onclick = myButton2;
 const complements = document.getElementsByClassName("complement");
 const dropZone = document.getElementById ("character-img");
 
+/**
+ * when something is dropped in the dropzone, update the dragImage style accordingly
+ * @param {event} event stores information related to the current drop event
+ */
+
+
 function onDrop(event) { 
-    //bring fancy hat to the position (clientX, clientY)
+    //update draggedImage style to:
+    //event.clientX (horizontal mouse position) - offsetX (calculated initial offset)
+    //event.clientY (vertical mouse position) - offsetY (calculated initial offset)
     draggedImage.style.left = event.clientX - offsetX + "px";
     draggedImage.style.top = event.clientY - offsetY + "px";
     console.log("Element has been dropped");
 }
 
+/**
+ * prevent the event default to allow dropping to hapen
+ * @param {event} event stores information to the current dragOver event
+ */
+
 function onDragOver(event) {
     event.preventDefault();
     console.log("Something is being dragged over me!");
 }
-
+//offset X and offsetY store the initial offset from clicking on the dragged image
 let offsetX = 0;
 let offsetY = 0;
 let draggedImage = undefined;
 
-function onDragStart(event) {
-    draggedImage = event.target;
+/**
+ * Store dragImage as the event target and compute initial offsetX and offsetY
+ * @param {event} event stores information related to the current dragover event
+ */
 
+function onDragStart(event) {
+    //event target points to the HTML element that started the drag event, i.e.
+    //the current image
+    draggedImage = event.target;
+    //window.getComputedStyle returns the style of the element removing the CSS text
+    //for ex. "100"
     const style = window.getComputedStyle(draggedImage, null);
 
     offsetX = event.clientX - parseInt(style.left);
@@ -91,10 +112,13 @@ function onDragStart(event) {
     console.log ("I'm being dragged")
 }
 
+ //link dropzone related event to dropZone object
 dropZone.ondrop = onDrop;
 dropZone.ondragover = onDragOver;
 
+//loop throw HTML elements stored inside the complement array
 for(let complement of complements) {
+    //link complement related events to each individual complement
     complement.ondragstart = onDragStart;
     complement.ondragover = onDragOver;
     complement.ondrop = onDrop;
